@@ -1,0 +1,21 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Attach PID files
+.attach_pid*
+
+# Target directories
+**/target
+
+# Eclipse files
+**/.classpath
+**/.project
+**/.factorypath
+**/target
+**/.settings
