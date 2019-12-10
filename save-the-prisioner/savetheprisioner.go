@@ -17,6 +17,10 @@ func saveThePrisoner(n int32, m int32, s int32) int32 {
 
 	lastChair := (startingChair + sweets - 1) % prisioners
 
+	if lastChair == 0 {
+		lastChair = prisioners
+	}
+
 	return lastChair
 }
 
