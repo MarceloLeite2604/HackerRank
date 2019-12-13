@@ -23,7 +23,11 @@ func squares(a int32, b int32) int32 {
 		lowerBound = math.Ceil(aSqrt)
 	}
 
-	upperBound = math.Ceil(bSqrt)
+	if bSqrt == math.Floor(bSqrt) {
+		upperBound = math.Floor(bSqrt) + 1
+	} else {
+		upperBound = math.Ceil(bSqrt)
+	}
 
 	return int32(upperBound - lowerBound)
 }
