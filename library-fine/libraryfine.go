@@ -16,12 +16,16 @@ func libraryFine(d1 int32, m1 int32, y1 int32, d2 int32, m2 int32, y2 int32) int
 		return 10000
 	}
 
-	if m1 > m2 {
-		return 500 * (m2 - m1)
+	sameYear := y1 == y2
+
+	if sameYear && m1 > m2 {
+		return 500 * (m1 - m2)
 	}
 
-	if d1 > d2 {
-		return 15 * (d2 - d1)
+	sameMonth := m1 == m2
+
+	if sameYear && sameMonth && d1 > d2 {
+		return 15 * (d1 - d2)
 	}
 
 	return 0
