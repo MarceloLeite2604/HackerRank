@@ -28,7 +28,7 @@ func flatlandSpaceStations(n int32, c []int32) int32 {
 		}
 	}
 
-	return maxDistance
+	return maxOverallDistance
 }
 
 func main() {
