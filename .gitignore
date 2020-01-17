@@ -19,3 +19,6 @@ hs_err_pid*
 **/.factorypath
 **/target
 **/.settings
+
+# Exclude test-cases directories
+**/test-cases/*
