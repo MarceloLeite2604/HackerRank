@@ -22,3 +22,6 @@ hs_err_pid*
 
 # Exclude test-cases directories
 **/test-cases/*
+
+# Exclude IntelliJ Idea files
+**/.idea
