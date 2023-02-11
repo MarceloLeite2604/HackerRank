@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -18,8 +19,7 @@ public class Solution {
 		}
 
 		List<List<String>> orderSortedArray = arr.stream()
-				.sorted((r1, r2) -> Integer.compare(Integer.parseInt(r1.get(0)),
-						Integer.parseInt(r2.get(0))))
+				.sorted(Comparator.comparingInt(r -> Integer.parseInt(r.get(0))))
 				.collect(Collectors.toList());
 
 		int halfSize = arr.size() / 2;
