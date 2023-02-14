@@ -6,14 +6,20 @@ readonly archetype_group_id;
 archetype_artifact="hackerrank-solution-archetype";
 readonly archetype_artifact;
 
-archetype_version="1.0"
+archetype_version="1.0";
 readonly archetype_version;
+
+archetype_url="https://github.com/MarceloLeite2604/maven-archetypes";
+readonly archetype_url;
 
 group_id="com.github.marceloleite2604.hackerrank";
 readonly group_id;
 
 version="1.0";
 readonly version;
+
+archetype_gav="$archetype_group_id:$archetype_artifact:$archetype_version";
+readonly archetype_gav;
 
 url="https://github.com/MarceloLeite2604/hackerrank";
 readonly url;
@@ -55,6 +61,13 @@ readonly maven_bin;
 if [[ -z "$maven_bin" ]];
 then
     1>&2 echo "Maven binary not found. Please install it with \"sudo apt install maven\".";
+    exit 1;
+fi;
+
+if [[ $($maven_bin archetype:crawl | grep -c "$archetype_gav") -eq 0 ]];
+then
+    1>&2 echo "Archetype \"$archetype_gav\" could not be found on Maven repository.";
+    1>&2 echo "More details about its installation can be found at $archetype_url";
     exit 1;
 fi;
 
