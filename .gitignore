@@ -25,3 +25,4 @@ hs_err_pid*
 
 # Exclude IntelliJ Idea files
 **/.idea
+**/*.iml
